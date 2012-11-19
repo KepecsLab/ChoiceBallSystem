@@ -43,7 +43,7 @@ to the new Arduino directory in your documents folder.
 
 6. Make note of the COM port that is assigned to Arduino (in Windows, this is viewable from the device manager under the "Ports (COM & LPT)" tab.)
 
-7. Run Arduino.exe. Select the correct port from Tools > Serial Port
+7. Run Arduino.exe. Select the correct port from Tools > Serial Port. Select "Arduino Mega 2560" from Tools > Board.
 
 8. Open the "ChoiceBallFirmware" sketch from File > Sketchbook
 
@@ -86,9 +86,13 @@ Timestamps =
 
 ************ SETUP - Part 4 (Troubleshooting)
 
-1. On running "StartChoiceBall", MATLAB returns "Could not find a valid Choice Ball module."
-This is usually due to the Arduino driver not being installed properly. In Windows, check the device manager to make sure the Arduino has been assigned a COM port.
+This section contains the solutions to actual problems people have received and written to us about. Don't be shy! sanders@cshl.edu
 
-2. On running "RunChoiceBall", the Idle LED lights and extinguishes, but the system does not respond to trackball movement.
-The trackball's custom-modified LED may have failed. Check to make sure it is illuminated.
-The trackball may not be properly paired with the USB card. Unplug the trackball from the USB card, and plug it back in. This will prompt the card to ask the device for ID information, and should only need to be done once so long as Arduino is powered.
+1. Problem: On running "StartChoiceBall", MATLAB returns "Could not find a valid Choice Ball module."
+Solution: This is usually due to the Arduino driver not being installed properly. In Windows, check the device manager to make sure the Arduino has been assigned a COM port.
+
+2. Problem: On running "RunChoiceBall", the Idle LED lights and extinguishes, but the system does not respond to trackball movement.
+Solution: The trackball's custom-modified LED may have failed. Check to make sure it is illuminated. The trackball may not be properly paired with the USB card. Unplug the trackball from the USB card, and plug it back in. This will prompt the card to ask the device for ID information, and should only need to be done once so long as Arduino is powered.
+
+3. Problem: When uploading the Choice Ball firmware to Arduino (Setup part 2, step 9), you receive an error message: "avrdude stk500_getsync(): not in sync resp=0x00"
+   Solution: Make sure you have properly selected the Arduino Mega 2560 board from the "Boards" submenu under "Tools".
